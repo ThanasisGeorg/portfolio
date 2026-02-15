@@ -20,13 +20,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { IconType } from "react-icons";
 import { BiLogoVisualStudio } from "react-icons/bi";
 import { Separator } from "../ui/separator";
+import { Button } from "../ui/button";
 
 function SkillItem({ icon: Icon, label }: { icon: IconType; label: string }) {
   return (
-    <div className="flex items-center gap-2 px-2 md:px-4 md:py-2 rounded-full border-2 text-base hover:scale-110 hover:shadow-xl transition-all duration-300">
+    <Button
+      variant="outline"
+      className="flex items-center gap-2 px-2 md:px-4 md:py-2 rounded-full border-2 text-base hover:scale-110 hover:shadow-xl transition-all duration-300"
+    >
       <Icon size={18} className="hidden md:block" />
       <span className="font-medium">{label}</span>
-    </div>
+    </Button>
   );
 }
 
@@ -57,8 +61,8 @@ function Skills() {
 
 export function SkillsCard() {
   return (
-    <Card className="w-full h-fit text-2xl shadow-xl">
-      <CardHeader>
+    <Card className="w-full h-fit text-2xl bg-[#f0f0f0]">
+      <CardHeader className="hidden md:block">
         <CardTitle>My Skills</CardTitle>
       </CardHeader>
       <CardContent>

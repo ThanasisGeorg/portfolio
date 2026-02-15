@@ -3,10 +3,12 @@ import { Label } from "@/components/ui/label";
 import { Field } from "../ui/field";
 import { Button } from "../ui/button";
 import { SiGithub, SiLinkedin } from "react-icons/si";
+import { SkillsCard } from "./skills-card";
+import { DetailsSkillsTabs } from "./details-skills-tabs";
 
 function Avatar() {
   return (
-    <div className="aspect-square rounded-full w-40 md:w-150 overflow-hidden border-2"></div>
+    <div className="aspect-square rounded-full w-25 md:w-180 overflow-hidden border-2"></div>
   );
 }
 
@@ -31,7 +33,7 @@ function Media({ label, value }: { label: string; value: string }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button className="w-fit cursor-pointer">
+          <Button className="w-fit cursor-pointer shadow-xl">
             <SiGithub />
             <span className="hidden md:block">{value}</span>
           </Button>
@@ -42,7 +44,7 @@ function Media({ label, value }: { label: string; value: string }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="w-fit cursor-pointer">
+          <Button variant="outline" className="w-fit cursor-pointer shadow-xl">
             <SiLinkedin />
             <span className="hidden md:block">{value}</span>
           </Button>
@@ -52,9 +54,9 @@ function Media({ label, value }: { label: string; value: string }) {
   );
 }
 
-function Details() {
+export function Details() {
   return (
-    <div className="grid grid-cols-2 gap-8 md:gap-12 w-full max-w-4xl">
+    <div className="grid grid-cols-2 gap-8 md:gap-12 w-full rounded-2xl border p-5 bg-[#f0f0f0]">
       <div className="flex flex-col gap-6">
         <Detail label="Full Name" value="Thanasis Georgalis" />
         <Detail label="Location" value="Thessaloniki, Greece" />
@@ -81,10 +83,18 @@ export function ProfileCard() {
       <CardHeader>
         <CardTitle>My Profile</CardTitle>
       </CardHeader>
-      <CardContent className="px-4 sm:px-6 md:px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10 w-full h-full">
+      <CardContent className="flex flex-col justify-between h-full">
+        <div className="flex flex-col md:flex-row items-center gap-5 md:gap-10 w-full h-full">
           <Avatar />
-          <Details />
+          <div className="hidden md:block w-full">
+            <Details />
+          </div>
+          <div className="block md:hidden w-full">
+            <DetailsSkillsTabs />
+          </div>
+        </div>
+        <div className="hidden md:block">
+          <SkillsCard />
         </div>
       </CardContent>
     </Card>

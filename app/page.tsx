@@ -39,9 +39,9 @@ function NavProfile() {
   );
 }
 
-function NavSkillsAndProjects() {
+function NavProjects() {
   const handleClick = () => {
-    const section = document.getElementById("skills");
+    const section = document.getElementById("projects");
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -51,7 +51,7 @@ function NavSkillsAndProjects() {
       className="cursor-pointer shadow-xl"
       onClick={handleClick}
     >
-      Skills & Projetcs
+      Projects
     </Button>
   );
 }
@@ -73,7 +73,7 @@ function WelcomeSection() {
       />
       <div className="flex flex-row gap-5 justify-center items-center">
         <NavProfile />
-        <NavSkillsAndProjects />
+        <NavProjects />
       </div>
     </section>
   );
@@ -87,13 +87,9 @@ function ProfileSection() {
   );
 }
 
-function SkillsProjectsSection() {
+function ProjectsSection() {
   return (
-    <section
-      id="skills"
-      className="flex flex-col gap-5 h-screen items-center p-5"
-    >
-      <SkillsCard />
+    <section id="projects" className="h-screen items-center p-5">
       <ProjectsCard />
     </section>
   );
@@ -104,7 +100,7 @@ export default function Home() {
     <div>
       <WelcomeSection />
       <ProfileSection />
-      <SkillsProjectsSection />
+      <ProjectsSection />
     </div>
   );
 }
