@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${ralewaySans.className} antialiased bg-[#e0e0e0]!`}>
+      <body className={`${ralewaySans.className} antialiased bg-[#d0d0d0]!`}>
         {children}
       </body>
     </html>
