@@ -36,7 +36,7 @@ function SkillItem({ icon: Icon, label }: { icon: IconType; label: string }) {
 
 function Skills() {
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className="flex flex-wrap gap-1">
       <SkillItem icon={SiSharp} label="C#" />
       <SkillItem icon={SiCoffeescript} label="Java" />
       <SkillItem icon={SiHtml5} label="HTML" />
