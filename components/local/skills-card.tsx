@@ -23,8 +23,8 @@ import { Separator } from "../ui/separator";
 
 function SkillItem({ icon: Icon, label }: { icon: IconType; label: string }) {
   return (
-    <div className="flex items-center gap-2 px-4 py-2 rounded-full border-2 text-base hover:scale-110 hover:shadow-xl transition-all duration-300">
-      <Icon size={18} />
+    <div className="flex items-center gap-2 px-2 md:px-4 md:py-2 rounded-full border-2 text-base hover:scale-110 hover:shadow-xl transition-all duration-300">
+      <Icon size={18} className="hidden md:block" />
       <span className="font-medium">{label}</span>
     </div>
   );

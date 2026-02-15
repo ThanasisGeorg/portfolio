@@ -27,7 +27,7 @@ export function Typewriter({
   return (
     <Label className="text-5xl md:text-8xl h-48 text-center font-semibold text-shadow-lg">
       <span className="inline whitespace-pre-wrap wrap-break-word">
-        {/*">"*/} {displayedText}
+        {displayedText}
         <span className="inline-block animate-pulse select-none">_</span>
       </span>
     </Label>

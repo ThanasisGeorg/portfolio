@@ -6,7 +6,6 @@ import { SkillsCard } from "@/components/local/skills-card";
 import { Typewriter } from "@/components/local/type-writer";
 import { Button } from "@/components/ui/button";
 import { Field } from "@/components/ui/field";
-import { ChevronDown } from "lucide-react";
 
 function Greeting({ text }: { text: string }) {
   return <Typewriter text={text} speed={80} />;
@@ -35,7 +34,7 @@ function NavProfile() {
 
   return (
     <Button className="cursor-pointer shadow-xl" onClick={handleClick}>
-      Profile <ChevronDown size={40} />
+      Profile
     </Button>
   );
 }
@@ -52,14 +51,14 @@ function NavSkillsAndProjects() {
       className="cursor-pointer shadow-xl"
       onClick={handleClick}
     >
-      Skills & Projetcs <ChevronDown size={40} />
+      Skills & Projetcs
     </Button>
   );
 }
 
 function WelcomeSection() {
   return (
-    <section className="flex flex-col gap-15 min-h-screen items-center justify-center p-2">
+    <section className="flex flex-col gap-15 h-screen items-center justify-center p-2">
       <Greeting text="Hi, my name is Thanasis Georgalis and i am a developer" />
       <Bio
         text="
@@ -72,7 +71,7 @@ function WelcomeSection() {
         "
         magicPhrase="the art of Code"
       />
-      <div className="flex flex-row gap-10 justify-center items-center">
+      <div className="flex flex-row gap-5 justify-center items-center">
         <NavProfile />
         <NavSkillsAndProjects />
       </div>
