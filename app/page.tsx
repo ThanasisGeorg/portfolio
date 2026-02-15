@@ -1,7 +1,12 @@
+"use client";
+
+import { ProfileCard } from "@/components/local/profile-card";
+import { ProjectsCard } from "@/components/local/projects-card";
+import { SkillsCard } from "@/components/local/skills-card";
 import { Typewriter } from "@/components/local/type-writer";
 import { Button } from "@/components/ui/button";
 import { Field } from "@/components/ui/field";
-import { Files, Mail } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 function Greeting({ text }: { text: string }) {
   return <Typewriter text={text} speed={80} />;
@@ -22,9 +27,39 @@ function Bio({ text, magicPhrase }: { text: string; magicPhrase: string }) {
   );
 }
 
-export default function Home() {
+function NavProfile() {
+  const handleClick = () => {
+    const section = document.getElementById("profile");
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="flex flex-col gap-15 min-h-screen items-center justify-center p-2">
+    <Button className="cursor-pointer shadow-xl" onClick={handleClick}>
+      Profile <ChevronDown size={40} />
+    </Button>
+  );
+}
+
+function NavSkillsAndProjects() {
+  const handleClick = () => {
+    const section = document.getElementById("skills");
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <Button
+      variant="outline"
+      className="cursor-pointer shadow-xl"
+      onClick={handleClick}
+    >
+      Skills & Projetcs <ChevronDown size={40} />
+    </Button>
+  );
+}
+
+function WelcomeSection() {
+  return (
+    <section className="flex flex-col gap-15 min-h-screen items-center justify-center p-2">
       <Greeting text="Hi, my name is Thanasis Georgalis and i am a developer" />
       <Bio
         text="
@@ -37,16 +72,40 @@ export default function Home() {
         "
         magicPhrase="the art of Code"
       />
-      {/* <div className="flex flex-row gap-2">
-        <Button variant="default">
-          <Files />
-          My projects
-        </Button>
-        <Button variant="default">
-          <Mail />
-          Contact me
-        </Button>
-      </div> */}
+      <div className="flex flex-row gap-10 justify-center items-center">
+        <NavProfile />
+        <NavSkillsAndProjects />
+      </div>
+    </section>
+  );
+}
+
+function ProfileSection() {
+  return (
+    <section id="profile" className="h-screen items-center p-5">
+      <ProfileCard />
+    </section>
+  );
+}
+
+function SkillsProjectsSection() {
+  return (
+    <section
+      id="skills"
+      className="flex flex-col gap-5 h-screen items-center p-5"
+    >
+      <SkillsCard />
+      <ProjectsCard />
+    </section>
+  );
+}
+
+export default function Home() {
+  return (
+    <div>
+      <WelcomeSection />
+      <ProfileSection />
+      <SkillsProjectsSection />
     </div>
   );
 }
