@@ -32,6 +32,7 @@ function Media({ label, value }: { label: string; value: string }) {
           href="https://github.com/ThanasisGeorg"
           target="_blank"
           rel="noopener noreferrer"
+          className="w-fit"
         >
           <Button className="w-fit cursor-pointer shadow-xl">
             <SiGithub />
@@ -43,6 +44,7 @@ function Media({ label, value }: { label: string; value: string }) {
           href="https://www.linkedin.com/in/athanasios-georgalis-3a848a23a/"
           target="_blank"
           rel="noopener noreferrer"
+          className="w-fit"
         >
           <Button variant="outline" className="w-fit cursor-pointer shadow-xl">
             <SiLinkedin />
