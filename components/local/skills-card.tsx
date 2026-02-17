@@ -36,32 +36,39 @@ function SkillItem({ icon: Icon, label }: { icon: IconType; label: string }) {
 
 function Skills() {
   return (
-    <div className="flex flex-wrap gap-1">
-      <SkillItem icon={SiSharp} label="C#" />
-      <SkillItem icon={SiCoffeescript} label="Java" />
-      <SkillItem icon={SiHtml5} label="HTML" />
-      <SkillItem icon={SiCss3} label="CSS" />
-      <SkillItem icon={SiJavascript} label="JavaScript" />
-      <SkillItem icon={SiPython} label="Python" />
-      <SkillItem icon={SiKotlin} label="Kotlin" />
-      <SkillItem icon={SiPhp} label="Php" />
-      <SkillItem icon={SiReact} label="React" />
-      <SkillItem icon={SiNextdotjs} label="Next.js" />
-      <SkillItem icon={SiLaravel} label="Laravel" />
-      <Separator orientation="horizontal" />
-      <SkillItem icon={SiPostgresql} label="PostgreSQL" />
-      <SkillItem icon={SiSqlite} label="SQLite" />
-      <Separator orientation="horizontal" />
-      <SkillItem icon={SiUnity} label="Unity" />
-      <SkillItem icon={BiLogoVisualStudio} label="Visual Studio Code" />
-      <SkillItem icon={SiAndroidstudio} label="Android Studio" />
+    <div className="flex flex-col gap-2">
+      <div className="flex flex-wrap gap-2 w-fit">
+        <SkillItem icon={SiSharp} label="C#" />
+        <SkillItem icon={SiCoffeescript} label="Java" />
+        <SkillItem icon={SiHtml5} label="HTML" />
+        <SkillItem icon={SiCss3} label="CSS" />
+        <SkillItem icon={SiJavascript} label="JavaScript" />
+        <SkillItem icon={SiPython} label="Python" />
+        <SkillItem icon={SiKotlin} label="Kotlin" />
+        <SkillItem icon={SiPhp} label="Php" />
+        <SkillItem icon={SiReact} label="React" />
+        <SkillItem icon={SiNextdotjs} label="Next.js" />
+        <SkillItem icon={SiLaravel} label="Laravel" />
+        <Separator orientation="horizontal" className="bg-[#ffffff]" />
+      </div>
+      <div className="flex flex-wrap gap-2 w-fit">
+        <SkillItem icon={SiPostgresql} label="PostgreSQL" />
+        <SkillItem icon={SiSqlite} label="SQLite" />
+        <Separator orientation="horizontal" className="bg-[#ffffff]" />
+      </div>
+      <div className="flex flex-wrap gap-2 w-fit">
+        <SkillItem icon={SiUnity} label="Unity" />
+        <SkillItem icon={BiLogoVisualStudio} label="Visual Studio Code" />
+        <SkillItem icon={SiAndroidstudio} label="Android Studio" />
+        <Separator orientation="horizontal" className="bg-[#ffffff]" />
+      </div>
     </div>
   );
 }
 
 export function SkillsCard() {
   return (
-    <Card className="w-full h-fit text-2xl bg-[#f0f0f0]">
+    <Card className="w-full h-fit text-2xl bg-[#d0d0d0]">
       <CardHeader className="hidden md:block">
         <CardTitle>My Skills</CardTitle>
       </CardHeader>

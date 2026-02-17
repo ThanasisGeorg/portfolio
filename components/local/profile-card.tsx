@@ -34,7 +34,7 @@ function Media({ label, value }: { label: string; value: string }) {
           rel="noopener noreferrer"
           className="w-fit"
         >
-          <Button className="w-fit cursor-pointer shadow-xl">
+          <Button className="w-fit cursor-pointer">
             <SiGithub />
             <span className="hidden md:block">{value}</span>
           </Button>
@@ -46,7 +46,7 @@ function Media({ label, value }: { label: string; value: string }) {
           rel="noopener noreferrer"
           className="w-fit"
         >
-          <Button variant="outline" className="w-fit cursor-pointer shadow-xl">
+          <Button variant="outline" className="w-fit cursor-pointer">
             <SiLinkedin />
             <span className="hidden md:block">{value}</span>
           </Button>
@@ -58,7 +58,7 @@ function Media({ label, value }: { label: string; value: string }) {
 
 export function Details() {
   return (
-    <div className="grid grid-cols-2 gap-8 md:gap-12 w-full rounded-2xl border p-5 bg-[#f0f0f0]">
+    <div className="grid grid-cols-2 gap-8 md:gap-12 w-full rounded-2xl border p-5 bg-[#d0d0d0]">
       <div className="flex flex-col gap-6">
         <Detail label="Full Name" value="Thanasis Georgalis" />
         <Detail label="Location" value="Thessaloniki, Greece" />
