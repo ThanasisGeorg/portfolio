@@ -24,20 +24,17 @@ import { Button } from "../ui/button";
 
 function SkillItem({ icon: Icon, label }: { icon: IconType; label: string }) {
   return (
-    <Button
-      variant="outline"
-      className="flex items-center gap-2 px-2 md:px-4 md:py-2 rounded-full border-2 text-base hover:scale-110 hover:shadow-xl transition-all duration-300"
-    >
+    <Button className="flex items-center gap-2 px-2 md:px-4 md:py-2 rounded-full border-2 text-base hover:scale-110 hover:shadow-2xl transition-all duration-300">
       <Icon size={18} className="hidden md:block" />
-      <span className="font-medium">{label}</span>
+      <span className="font-medium text-xs md:text-sm">{label}</span>
     </Button>
   );
 }
 
 function Skills() {
   return (
-    <div className="flex flex-col gap-2">
-      <div className="flex flex-wrap gap-2 w-fit">
+    <div className="flex flex-col gap-1">
+      <div className="flex flex-wrap gap-1 w-fit">
         <SkillItem icon={SiSharp} label="C#" />
         <SkillItem icon={SiCoffeescript} label="Java" />
         <SkillItem icon={SiHtml5} label="HTML" />
@@ -49,18 +46,18 @@ function Skills() {
         <SkillItem icon={SiReact} label="React" />
         <SkillItem icon={SiNextdotjs} label="Next.js" />
         <SkillItem icon={SiLaravel} label="Laravel" />
-        <Separator orientation="horizontal" className="bg-[#ffffff]" />
+        {/* <Separator orientation="horizontal" className="bg-[#d0d0d0]" /> */}
       </div>
-      <div className="flex flex-wrap gap-2 w-fit">
+      <div className="flex flex-wrap gap-1 w-fit">
         <SkillItem icon={SiPostgresql} label="PostgreSQL" />
         <SkillItem icon={SiSqlite} label="SQLite" />
-        <Separator orientation="horizontal" className="bg-[#ffffff]" />
+        {/* <Separator orientation="horizontal" className="bg-[#d0d0d0]" /> */}
       </div>
-      <div className="flex flex-wrap gap-2 w-fit">
+      <div className="flex flex-wrap gap-1 w-fit">
         <SkillItem icon={SiUnity} label="Unity" />
         <SkillItem icon={BiLogoVisualStudio} label="Visual Studio Code" />
         <SkillItem icon={SiAndroidstudio} label="Android Studio" />
-        <Separator orientation="horizontal" className="bg-[#ffffff]" />
+        {/* <Separator orientation="horizontal" className="bg-[#d0d0d0]" /> */}
       </div>
     </div>
   );
@@ -68,11 +65,11 @@ function Skills() {
 
 export function SkillsCard() {
   return (
-    <Card className="w-full h-fit text-2xl bg-[#d0d0d0]">
-      <CardHeader className="hidden md:block">
-        <CardTitle>My Skills</CardTitle>
+    <Card className="w-full h-fit border-none shadow-none">
+      <CardHeader className="hidden md:block p-0">
+        <CardTitle className="text-base">My Skills</CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="p-0">
         <Skills />
       </CardContent>
     </Card>

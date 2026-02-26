@@ -2,13 +2,12 @@
 
 import { ProfileCard } from "@/components/local/profile-card";
 import { ProjectsCard } from "@/components/local/projects-card";
-import { SkillsCard } from "@/components/local/skills-card";
 import { Typewriter } from "@/components/local/type-writer";
 import { Button } from "@/components/ui/button";
 import { Field } from "@/components/ui/field";
 
 function Greeting({ text }: { text: string }) {
-  return <Typewriter text={text} speed={80} />;
+  return <Typewriter text={text} speed={90} />;
 }
 
 function Bio({ text, magicPhrase }: { text: string; magicPhrase: string }) {

@@ -8,17 +8,17 @@ import { DetailsSkillsTabs } from "./details-skills-tabs";
 
 function Avatar() {
   return (
-    <div className="aspect-square rounded-full w-25 md:w-180 overflow-hidden border-2"></div>
+    <div className="aspect-square rounded-full w-25 md:w-140 overflow-hidden border-2"></div>
   );
 }
 
 function Detail({ label, value }: { label: string; value: string }) {
   return (
     <div className="grid gap-2">
-      <Label className="text-xs md:text-base text-muted-foreground">
+      <Label className="text-xs md:text-sm text-muted-foreground">
         {label}
       </Label>
-      <Field className="text-sm md:text-2xl wrap-anywhere">{value}</Field>
+      <Field className="text-sm md:text-base wrap-anywhere">{value}</Field>
     </div>
   );
 }
@@ -26,7 +26,9 @@ function Detail({ label, value }: { label: string; value: string }) {
 function Media({ label, value }: { label: string; value: string }) {
   return (
     <div className="grid gap-2">
-      <Label className="text-base text-muted-foreground">{label}</Label>
+      <Label className="text-xs md:text-sm text-muted-foreground">
+        {label}
+      </Label>
       {label === "Github" ? (
         <a
           href="https://github.com/ThanasisGeorg"
@@ -83,10 +85,10 @@ export function ProfileCard() {
   return (
     <Card className="w-full h-full text-2xl shadow-xl">
       <CardHeader>
-        <CardTitle>My Profile</CardTitle>
+        <CardTitle className="text-base">My Profile</CardTitle>
       </CardHeader>
-      <CardContent className="flex flex-col justify-between h-full">
-        <div className="flex flex-col md:flex-row items-center gap-5 md:gap-10 w-full h-full">
+      <CardContent className="flex flex-col gap-6 h-full">
+        <div className="flex flex-col md:flex-row items-center gap-5 md:gap-10 w-full h-fit">
           <Avatar />
           <div className="hidden md:block w-full">
             <Details />

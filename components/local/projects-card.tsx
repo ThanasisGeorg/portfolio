@@ -6,7 +6,7 @@ export function ProjectsCard() {
   return (
     <Card className="w-full h-full text-2xl shadow-xl">
       <CardHeader>
-        <CardTitle>My Top Projects</CardTitle>
+        <CardTitle className="text-base">My Top Projects</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="flex flex-row items-center justify-start gap-10 w-full h-full"></div>
