@@ -7,25 +7,25 @@
 :root {
   --font-raleway: "Raleway", sans-serif;
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --background: oklch(0.97 0.01 260);
+  --foreground: oklch(0.24 0.03 260);
+  --card: oklch(0.99 0.01 260);
+  --card-foreground: oklch(0.24 0.03 260);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --primary: oklch(0.59 0.2 267);
+  --primary-foreground: oklch(0.98 0.01 260);
+  --secondary: oklch(0.93 0.02 265);
+  --secondary-foreground: oklch(0.3 0.03 260);
+  --muted: oklch(0.95 0.015 260);
+  --muted-foreground: oklch(0.46 0.03 260);
+  --accent: oklch(0.92 0.05 230);
+  --accent-foreground: oklch(0.28 0.06 230);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: oklch(0.88 0.02 260);
+  --input: oklch(0.88 0.02 260);
+  --ring: oklch(0.67 0.16 267);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -89,35 +89,42 @@ html {
 }
 
 body {
+  min-height: 100vh;
   font-family: var(--font-raleway);
-  background-image: radial-gradient(
-    circle,
-    rgba(0, 0, 0, 0.15) 1px,
-    transparent 1px
-  );
-  background-size: 20px 20px;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(90, 105, 255, 0.25), transparent 35%),
+    radial-gradient(circle at 90% 80%, rgba(56, 189, 248, 0.18), transparent 30%),
+    linear-gradient(180deg, #f8faff 0%, #eef2ff 45%, #e6ecff 100%);
+  color: var(--foreground);
+}
+
+.dark body {
+  background:
+    radial-gradient(circle at 20% 15%, rgba(93, 92, 222, 0.35), transparent 30%),
+    radial-gradient(circle at 85% 85%, rgba(30, 91, 180, 0.25), transparent 30%),
+    linear-gradient(180deg, #0d1220 0%, #12182a 45%, #0d1322 100%);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: oklch(0.2 0.03 265);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
+  --card: oklch(0.24 0.03 265);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.269 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
+  --primary: oklch(0.7 0.16 267);
+  --primary-foreground: oklch(0.18 0.03 260);
+  --secondary: oklch(0.3 0.03 260);
   --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.371 0 0);
+  --muted: oklch(0.28 0.03 260);
+  --muted-foreground: oklch(0.76 0.01 260);
+  --accent: oklch(0.32 0.07 230);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --border: oklch(0.36 0.03 260 / 85%);
+  --input: oklch(0.36 0.03 260 / 85%);
+  --ring: oklch(0.65 0.14 267);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
@@ -136,10 +143,59 @@ body {
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
-    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-card/80 border border-border/70 backdrop-blur-md shadow-xl;
+  }
+
+  .section-title {
+    @apply text-xl md:text-2xl font-semibold tracking-tight;
+  }
+
+  .reveal-up {
+    animation: reveal-up 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .reveal-delay-1 {
+    animation-delay: 120ms;
+  }
+
+  .reveal-delay-2 {
+    animation-delay: 240ms;
+  }
+
+  .reveal-delay-3 {
+    animation-delay: 360ms;
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
   }
 }
